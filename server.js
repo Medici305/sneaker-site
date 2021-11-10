@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://sneaker-site-uk.herokuapp.com",
+    origin: "http://localhost:3000",
   })
 );
 
@@ -33,8 +33,8 @@ app.post("/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         };
       }),
-      success_url: `https://sneaker-site-uk.herokuapp.com/success`,
-      cancel_url: `https://sneaker-site-uk.herokuapp.com`,
+      success_url: `http://localhost:3000/success`,
+      cancel_url: `http://localhost:3000`,
     });
     res.json({ url: session.url });
     res.redirect(303, session.url);

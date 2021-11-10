@@ -14,19 +14,16 @@ const Cart = ({ basket, cartItem, setCartItem }) => {
   // Function
   const handleClick = () => {
     setLoading(true);
-    fetch(
-      "https://sneaker-site-uk.herokuapp.com/create-checkout-session",
-      {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          items: [{ id: 1, quantity: cartItem }],
-        }),
-      }
-    )
+    fetch("http://localhost:5000/create-checkout-session", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        items: [{ id: 1, quantity: cartItem }],
+      }),
+    })
       .then((res) => {
         if (res.ok) return res.json();
         return res.json().then((json) => Promise.reject(json));
