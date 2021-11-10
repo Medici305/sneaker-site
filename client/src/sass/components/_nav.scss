@@ -1,0 +1,32 @@
+// Import
+@import "./variables";
+
+.container {
+  a {
+    text-decoration: none;
+  }
+  img,
+  svg {
+    cursor: pointer;
+  }
+  .profile {
+    img {
+      width: 30%;
+      height: auto;
+      object-fit: cover;
+      border: 2px solid $Orange;
+      border-radius: 50%;
+    }
+
+    .notification span {
+      font-size: 0.75rem !important;
+      position: absolute;
+      top: 0;
+      left: 10;
+      padding: 0.05rem 0.45rem;
+      border-radius: 50%;
+      background: $Orange;
+      color: white;
+    }
+  }
+}
