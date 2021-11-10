@@ -15,7 +15,7 @@ const Cart = ({ basket, cartItem, setCartItem }) => {
   const handleClick = () => {
     setLoading(true);
     fetch(
-      "https://sneaker-product-page.herokuapp.com//create-checkout-session",
+      "https://sneaker-site-uk.herokuapp.com/create-checkout-session",
       {
         method: "POST",
         mode: "cors",

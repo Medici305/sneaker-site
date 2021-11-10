@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://sneaker-product-page.herokuapp.com/",
+    origin: "https://sneaker-site-uk.herokuapp.com",
   })
 );
 
@@ -33,8 +33,8 @@ app.post("/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         };
       }),
-      success_url: `https://sneaker-product-page.herokuapp.com//success`,
-      cancel_url: `https://sneaker-product-page.herokuapp.com/`,
+      success_url: `https://sneaker-site-uk.herokuapp.com/success`,
+      cancel_url: `https://sneaker-site-uk.herokuapp.com`,
     });
     res.json({ url: session.url });
     res.redirect(303, session.url);
